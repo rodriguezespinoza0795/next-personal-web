@@ -3,9 +3,12 @@
 import { useTranslation } from "react-i18next";
 import { Card, CardContent } from "@/components/ui/card";
 import { motion } from "framer-motion";
+import { Button } from "./ui/button";
+import { useState } from "react";
 
 export default function About() {
   const { t } = useTranslation();
+  const [showMore, setShowMore] = useState(false);
 
   const technologies = [
     { name: "Next.js", icon: "/placeholder.svg?height=40&width=40" },
@@ -50,9 +53,34 @@ export default function About() {
           <h2 className="text-3xl md:text-4xl font-bold mb-4">
             {t("about.title")}
           </h2>
-          <p className="text-xl text-muted-foreground max-w-2xl mx-auto">
-            {t("about.description")}
-          </p>
+          <div className="flex flex-col gap-4">
+            <p className="text-sm md:text-xl text-muted-foreground max-w-3xl mx-auto ">
+              {t("about.description.1")}
+            </p>
+            {showMore ? (
+              <>
+                <p className="text-sm md:text-xl text-muted-foreground max-w-3xl mx-auto">
+                  {t("about.description.2")}
+                </p>
+                <p className="text-sm md:text-xl text-muted-foreground max-w-3xl mx-auto">
+                  {t("about.description.3")}
+                </p>
+                <p className="text-sm md:text-xl text-muted-foreground max-w-3xl mx-auto">
+                  {t("about.description.4")}
+                </p>
+                <p className="text-sm md:text-xl text-muted-foreground max-w-3xl mx-auto">
+                  {t("about.description.5")}
+                </p>
+              </>
+            ) : null}
+            <Button
+              variant="link"
+              onClick={() => setShowMore(!showMore)}
+              className="mx-auto mt-4"
+            >
+              {showMore ? t("about.seeLess") : t("about.seeMore")}
+            </Button>
+          </div>
         </motion.div>
 
         <div className="mt-16">

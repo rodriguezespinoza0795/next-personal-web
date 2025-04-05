@@ -5,6 +5,7 @@ import { Button } from "@/components/ui/button";
 import { ArrowRight } from "lucide-react";
 import Image from "next/image";
 import { motion } from "framer-motion";
+import Link from "next/link";
 
 export default function Hero() {
   const { t } = useTranslation();
@@ -30,9 +31,11 @@ export default function Hero() {
           {t("hero.description")}
         </p>
         <div className="pt-4">
-          <Button size="lg" className="group">
-            {t("hero.cta")}
-            <ArrowRight className="ml-2 h-4 w-4 transition-transform group-hover:translate-x-1" />
+          <Button size="lg" className="group" asChild>
+            <Link href="#projects" scroll={true}>
+              {t("hero.cta")}
+              <ArrowRight className="ml-2 h-4 w-4 transition-transform group-hover:translate-x-1" />
+            </Link>
           </Button>
         </div>
       </motion.div>
@@ -45,7 +48,7 @@ export default function Hero() {
       >
         <div className="relative w-64 h-64 md:w-80 md:h-80 rounded-full overflow-hidden border-4 border-primary/20">
           <Image
-            src="/placeholder.svg?height=320&width=320"
+            src="/profile.png"
             alt="Developer portrait"
             fill
             className="object-cover"
