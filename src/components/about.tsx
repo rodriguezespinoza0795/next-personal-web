@@ -4,25 +4,114 @@ import { useTranslation } from "react-i18next";
 import { Card, CardContent } from "@/components/ui/card";
 import { motion } from "framer-motion";
 import { Button } from "./ui/button";
-import { useState } from "react";
-
+import { useEffect, useState } from "react";
+import { useTheme } from "next-themes";
+import Image from "next/image";
+import clsx from "clsx";
 export default function About() {
   const { t } = useTranslation();
   const [showMore, setShowMore] = useState(false);
+  const { theme } = useTheme();
+
+  const [mounted, setMounted] = useState(false);
+
+  useEffect(() => {
+    setMounted(true);
+  }, []);
+
+  if (!mounted) return null; // evitar render SSR incorrecto
 
   const technologies = [
-    { name: "Next.js", icon: "/placeholder.svg?height=40&width=40" },
-    { name: "React", icon: "/placeholder.svg?height=40&width=40" },
-    { name: "NestJS", icon: "/placeholder.svg?height=40&width=40" },
-    { name: "TypeScript", icon: "/placeholder.svg?height=40&width=40" },
-    { name: "Node.js", icon: "/placeholder.svg?height=40&width=40" },
-    { name: "Docker", icon: "/placeholder.svg?height=40&width=40" },
-    { name: "Kubernetes", icon: "/placeholder.svg?height=40&width=40" },
-    { name: "AWS", icon: "/placeholder.svg?height=40&width=40" },
-    { name: "PostgreSQL", icon: "/placeholder.svg?height=40&width=40" },
-    { name: "MongoDB", icon: "/placeholder.svg?height=40&width=40" },
-    { name: "Tailwind CSS", icon: "/placeholder.svg?height=40&width=40" },
-    { name: "Git", icon: "/placeholder.svg?height=40&width=40" },
+    {
+      name: "React.js",
+      icon: "/technologies/react.svg",
+      type: "Frontend Library",
+      color: {
+        background: "bg-blue-400/10",
+        hover: "hover:bg-blue-400/20",
+      },
+    },
+    {
+      name: "Next.js",
+      icon: "/technologies/next.svg",
+      type: "Frontend Framework",
+      color: {
+        background: "bg-blue-400/10",
+        hover: "hover:bg-blue-400/20",
+      },
+    },
+    {
+      name: "TypeScript",
+      icon: "/technologies/typescript.svg",
+      type: "Language",
+      color: {
+        background: "bg-red-400/10",
+        hover: "hover:bg-red-400/20",
+      },
+    },
+    {
+      name: "Tailwind CSS",
+      icon: "/technologies/tailwind.svg",
+      type: "CSS Framework",
+      color: {
+        background: "bg-orange-400/10",
+        hover: "hover:bg-orange-400/20",
+      },
+    },
+    {
+      name: "Git",
+      icon: "/technologies/git.svg",
+      type: "Version Control",
+      color: {
+        background: "bg-green-400/10",
+        hover: "hover:bg-green-400/20",
+      },
+    },
+    {
+      name: "ESLint",
+      icon: "/technologies/eslint.svg",
+      type: "Linter",
+      color: {
+        background: "bg-violet-400/10",
+        hover: "hover:bg-violet-400/20",
+      },
+    },
+    {
+      name: "PostgreSQL",
+      icon: "/technologies/postgresql.svg",
+      type: "Database",
+      color: {
+        background: "bg-lime-400/10",
+        hover: "hover:bg-lime-400/20",
+      },
+    },
+    {
+      name: "Node.js",
+      icon: "/technologies/node.svg",
+      type: "Runtime Environment",
+      color: {
+        background: "bg-green-400/10",
+        hover: "hover:bg-green-400/20",
+      },
+    },
+    {
+      name: "npm",
+      icon: "/technologies/npm.svg",
+      type: "Package Manager",
+      color: {
+        background: "bg-red-400/10",
+        hover: "hover:bg-red-400/20",
+      },
+    },
+    {
+      name: "Shadcn UI",
+      icon: "/technologies/shadcnui.svg",
+      type: "UI Library",
+      color: {
+        background: "bg-orange-400/10",
+        hover: "hover:bg-orange-400/20",
+      },
+    },
   ];
 
   const container = {
@@ -54,7 +143,7 @@ export default function About() {
             {t("about.title")}
           </h2>
           <div className="flex flex-col gap-4">
-            <p className="text-sm md:text-xl text-muted-foreground max-w-3xl mx-auto ">
+            <p className="text-sm md:text-xl text-muted-foreground max-w-3xl mx-auto  ">
               {t("about.description.1")}
             </p>
             {showMore ? (
@@ -96,16 +185,32 @@ export default function About() {
           >
             {technologies.map((tech, index) => (
               <motion.div key={index} variants={item}>
-                <Card className="hover:border-primary/50 transition-colors">
+                <Card
+                  className={clsx(
+                    "hover:border-primary/50 transition-colors",
+                    tech.color.background,
+                    tech.color.hover
+                  )}
+                >
                   <CardContent className="flex flex-col items-center justify-center p-4">
                     <div className="w-10 h-10 mb-2">
-                      <img
-                        src={tech.icon || "/placeholder.svg"}
+                      <Image
+                        priority={false}
+                        width={40}
+                        height={40}
+                        src={
+                          theme === "dark"
+                            ? tech.icon.replace(".svg", "-white.svg")
+                            : tech.icon
+                        }
                         alt={tech.name}
                         className="w-full h-full object-contain"
                       />
                     </div>
                     <span className="text-sm font-medium">{tech.name}</span>
+                    <span className="text-xs text-muted-foreground">
+                      {tech.type}
+                    </span>
                   </CardContent>
                 </Card>
               </motion.div>
