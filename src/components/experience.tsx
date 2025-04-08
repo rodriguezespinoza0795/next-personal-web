@@ -20,30 +20,46 @@ export default function Experience() {
   const experiences: Experience[] = [
     {
       id: 1,
-      company: "Tech Solutions Inc.",
-      position: "Senior Full Stack Developer",
-      period: "2021 - Present",
+      company: "Softtek (Concast Pipe Inc.)",
+      position: "Software Engineer",
+      period: "Jan 2025 - Present",
       description:
-        "Leading the development of enterprise web applications. Implementing CI/CD pipelines and mentoring junior developers.",
-      technologies: ["Next.js", "NestJS", "Docker", "AWS", "PostgreSQL"],
+        "Developing and maintaining web application for a manufacturing company.",
+      technologies: ["Next.js", "AWS", "Redux"],
     },
     {
       id: 2,
-      company: "Digital Innovations",
-      position: "Full Stack Developer",
-      period: "2019 - 2021",
+      company: "Softtek (Banorte Securities)",
+      position: "Software Engineer",
+      period: "Mar 2023 - Dec 2024",
       description:
-        "Developed and maintained multiple client projects. Worked on both frontend and backend implementations.",
-      technologies: ["React", "Node.js", "MongoDB", "Express", "Redux"],
+        "Developed and maintained web application for a financial institution.",
+      technologies: ["React", "AWS"],
     },
     {
       id: 3,
-      company: "Web Creators",
-      position: "Frontend Developer",
-      period: "2017 - 2019",
+      company: "Kredfeed",
+      position: "Full Stack Developer",
+      period: "Sept 2021 - Feb 2023",
+      description: "Created a web application for a financial institution.",
+      technologies: ["React", "Node.js"],
+    },
+    {
+      id: 4,
+      company: "Beliveo",
+      position: "Full Stack Developer",
+      period: "Sept 2020 - Feb 2022",
       description:
-        "Created responsive and interactive user interfaces for various web applications.",
-      technologies: ["JavaScript", "HTML", "CSS", "Vue.js", "Sass"],
+        "Created and maintained a web application for a call center.",
+      technologies: ["React", "Node.js", "Material-UI", "GraphQL"],
+    },
+    {
+      id: 5,
+      company: "Beliveo",
+      position: "Management Information System",
+      period: "Feb 2020 - Sep 2020",
+      description: "Maintained and updated databases for a call center.",
+      technologies: ["SQL Server", "SSIS", "MySQL", "Python", "Looker Studio"],
     },
   ];
 

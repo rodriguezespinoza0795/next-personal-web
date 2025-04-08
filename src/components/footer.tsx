@@ -1,7 +1,7 @@
 "use client";
 
 import { useTranslation } from "react-i18next";
-import { Github, Linkedin, Mail } from "lucide-react";
+import { Github, Linkedin /*, Mail */ } from "lucide-react";
 import Link from "next/link";
 
 export default function Footer() {
@@ -19,7 +19,7 @@ export default function Footer() {
           </div>
           <div className="flex space-x-4">
             <Link
-              href="https://github.com/yourusername"
+              href="https://github.com/rodriguezespinoza0795"
               target="_blank"
               rel="noopener noreferrer"
               className="text-muted-foreground hover:text-primary transition-colors"
@@ -28,7 +28,7 @@ export default function Footer() {
               <span className="sr-only">GitHub</span>
             </Link>
             <Link
-              href="https://linkedin.com/in/yourusername"
+              href="https://www.linkedin.com/in/davidre0795/"
               target="_blank"
               rel="noopener noreferrer"
               className="text-muted-foreground hover:text-primary transition-colors"
@@ -36,13 +36,13 @@ export default function Footer() {
               <Linkedin className="h-5 w-5" />
               <span className="sr-only">LinkedIn</span>
             </Link>
-            <Link
+            {/* <Link
               href="mailto:your.email@example.com"
               className="text-muted-foreground hover:text-primary transition-colors"
             >
               <Mail className="h-5 w-5" />
               <span className="sr-only">Email</span>
-            </Link>
+            </Link> */}
           </div>
         </div>
       </div>

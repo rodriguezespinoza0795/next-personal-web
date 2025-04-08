@@ -21,11 +21,18 @@ export default function About() {
 
   if (!mounted) return null; // evitar render SSR incorrecto
 
-  const technologies = [
+  interface Technology {
+    name: string;
+    icon: string;
+    type: string;
+    color: { background: string; hover: string };
+  }
+
+  const technologies: Technology[] = [
     {
       name: "React.js",
       icon: "/technologies/react.svg",
-      type: "Frontend Library",
+      type: "Frontend library",
       color: {
         background: "bg-blue-400/10",
         hover: "hover:bg-blue-400/20",
@@ -34,7 +41,7 @@ export default function About() {
     {
       name: "Next.js",
       icon: "/technologies/next.svg",
-      type: "Frontend Framework",
+      type: "Fullstack Framework",
       color: {
         background: "bg-blue-400/10",
         hover: "hover:bg-blue-400/20",
@@ -43,7 +50,7 @@ export default function About() {
     {
       name: "TypeScript",
       icon: "/technologies/typescript.svg",
-      type: "Language",
+      type: "Programming Language",
       color: {
         background: "bg-red-400/10",
         hover: "hover:bg-red-400/20",
@@ -70,7 +77,7 @@ export default function About() {
     {
       name: "ESLint",
       icon: "/technologies/eslint.svg",
-      type: "Linter",
+      type: "Linting Tool",
       color: {
         background: "bg-violet-400/10",
         hover: "hover:bg-violet-400/20",
@@ -110,6 +117,78 @@ export default function About() {
       color: {
         background: "bg-orange-400/10",
         hover: "hover:bg-orange-400/20",
+      },
+    },
+    {
+      name: "Amazon AWS",
+      icon: "/technologies/amazonwebservices.svg",
+      type: "Cloud Service",
+      color: {
+        background: "bg-orange-400/10",
+        hover: "hover:bg-orange-400/20",
+      },
+    },
+    {
+      name: "Amazon Cognito",
+      icon: "/technologies/amazoncognito.svg",
+      type: "Authentication Service",
+      color: {
+        background: "bg-orange-400/10",
+        hover: "hover:bg-orange-400/20",
+      },
+    },
+    {
+      name: "Amazon IAM",
+      icon: "/technologies/amazoniam.svg",
+      type: "Identity and Access Management",
+      color: {
+        background: "bg-blue-400/10",
+        hover: "hover:bg-blue-400/20",
+      },
+    },
+    {
+      name: "Railway",
+      icon: "/technologies/railway.svg",
+      type: "Cloud Service",
+      color: {
+        background: "bg-blue-400/10",
+        hover: "hover:bg-blue-400/20",
+      },
+    },
+    {
+      name: "Vercel",
+      icon: "/technologies/vercel.svg",
+      type: "Cloud Service",
+      color: {
+        background: "bg-blue-400/10",
+        hover: "hover:bg-blue-400/20",
+      },
+    },
+    {
+      name: "Jest",
+      icon: "/technologies/jest.svg",
+      type: "Testing Framework",
+      color: {
+        background: "bg-red-400/10",
+        hover: "hover:bg-red-400/20",
+      },
+    },
+    {
+      name: "Swagger",
+      icon: "/technologies/swagger.svg",
+      type: "API Documentation",
+      color: {
+        background: "bg-blue-400/10",
+        hover: "hover:bg-blue-400/20",
+      },
+    },
+    {
+      name: "Nest.js",
+      icon: "/technologies/nestjs.svg",
+      type: "Backend Framework",
+      color: {
+        background: "bg-blue-400/10",
+        hover: "hover:bg-blue-400/20",
       },
     },
   ];

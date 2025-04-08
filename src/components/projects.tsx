@@ -112,55 +112,21 @@ export default function Projects() {
     },
     {
       id: 2,
-      title: "Admin Dashboard",
-      description:
-        "A responsive admin dashboard with data visualization and user management.",
-      image: "/placeholder.svg?height=300&width=600",
-      type: "frontend",
-      technologies: ["React", "TypeScript", "Tailwind CSS", "Chart.js"],
-      githubUrl: "https://github.com",
-    },
-    {
-      id: 3,
-      title: "API Service",
-      description:
-        "RESTful API service with authentication, authorization, and data processing.",
-      image: "/placeholder.svg?height=300&width=600",
+      title: "Auth Cognito Core",
+      description: "A complete authentication system using Cognito and AWS.",
+      image: "/projects/auth-cognito-core.png",
       type: "backend",
-      technologies: ["NestJS", "TypeScript", "MongoDB", "JWT"],
-      githubUrl: "https://github.com",
-    },
-    {
-      id: 4,
-      title: "Portfolio Website",
-      description:
-        "A personal portfolio website showcasing projects and skills.",
-      image: "/placeholder.svg?height=300&width=600",
-      type: "frontend",
-      technologies: ["Next.js", "Tailwind CSS", "Framer Motion"],
-      githubUrl: "https://github.com",
-      demoUrl: "https://demo.com",
-    },
-    {
-      id: 5,
-      title: "Task Management App",
-      description:
-        "A full-stack task management application with real-time updates.",
-      image: "/placeholder.svg?height=300&width=600",
-      type: "fullstack",
-      technologies: ["React", "Node.js", "Socket.io", "MongoDB"],
-      githubUrl: "https://github.com",
-      demoUrl: "https://demo.com",
-    },
-    {
-      id: 6,
-      title: "Microservice Architecture",
-      description:
-        "A set of microservices for handling different aspects of a business application.",
-      image: "/placeholder.svg?height=300&width=600",
-      type: "backend",
-      technologies: ["NestJS", "Docker", "Kubernetes", "RabbitMQ"],
-      githubUrl: "https://github.com",
+      technologies: [
+        "Nest.js",
+        "TypeScript",
+        "Railway",
+        "Jest",
+        "Swagger",
+        "Amazon IAM",
+        "Amazon Cognito",
+      ],
+      githubUrl: "https://github.com/rodriguezespinoza0795/auth-cognito-core",
+      demoUrl: "https://auth-cognito-core-production.up.railway.app/api",
     },
   ];
 
